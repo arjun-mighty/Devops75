@@ -1,0 +1,103 @@
+#Variables,Json,yaml.
+
+print('hi')
+#String variables
+print("Strings...")
+skill = "Devops"
+print(skill)
+print("##################")
+#Integre variable
+print("Integers...")
+nums = 123
+print(nums)
+
+print("##################")
+print("Lists...")
+
+tools = ["Jenkins","Docker","K8s","Terraform",90]
+print(tools)
+print(tools[2])
+print(tools[-1])
+print(tools[1])
+print(tools[1:3] [1])
+
+print("##################")
+print("Dictionary...")
+devops={"skill":"Devops","year":2002,"Tech":{"Cloud":"AWS","Containers":"K8s","CICD":"Jenkins"}}
+print(devops)
+
+devops={"skill":"Devops","year":2002,"Tech":{"Cloud":"AWS","Containers":"K8s","CICD":"Jenkins","Gitops":["GitLab" , "ArgoCd" , "Tekton"]}}
+print(devops)
+print("##################")
+devops ={
+    "skill":"Devops",
+    "year":2002,
+    "Tech":
+        {
+            "Cloud":"AWS",
+            "Containers":"K8s",
+            "CICD":"Jenkins",   
+            "Gitops":
+                [
+                    "GitLab" , "ArgoCd" , "Tekton"
+                ]
+        
+        }
+    
+    }
+
+#Dictionary to json (https://jsoneditoronline.org/#left=local.zitife&right=local.lujidu)
+{
+    "skill":"Devops",
+    "year":2002,
+    "Tech":
+        {
+            "Cloud":"AWS",
+            "Containers":"K8s",
+            "CICD":"Jenkins",
+            "Gitops":
+                [
+                    "GitLab" , "ArgoCd" , "Tekton"
+                ]
+        
+        }
+    
+    }
+ #Json to yaml (https://codebeautify.org/yaml-editor-online)
+
+devops :
+ "skill": "Devops"
+ "year": 2002
+ "Tech":
+    "Cloud": "AWS"
+    "Containers": "K8s"
+    "CICD": "Jenkins"
+    "Gitops":
+        - "GitLab" 
+        - "ArgoCd" 
+        - "Tekton"
+                
+        
+        
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#print("##################")
+#print("Tupules...")
+#tool =("Jenkins","Docker","K8s","Terraform",90)
+#print(tool)
