@@ -1,2 +1,85 @@
-Bash shell scripting.
+# Bash shell scripting.
+
+#1.Userinput
+#!/bin/bash
+
+echo "Enter your skills:"
+read SKILL
+
+echo "Your $SKILL skill is in high Demand in the IT Industry."
+
+read -p 'Username: ' USR
+read -sp 'Password: ' pass
+
+echo
+
+echo "Login Successfull: Welcome USER $USR,"
+
+# 2.If else
+#!/bin/bash
+
+value=$(ip addr show | grep -v LOOPBACK | grep -ic mtu)
+
+if [ $value -eq 1 ]
+then
+  echo "1 Active Network Interface found."
+elif [ $value -gt 1 ]
+then
+  echo "Found Multiple active Interface."
+else
+  echo "No Active interface found."
+fi
+
+#3.forloop
+#!/bin/bash
+
+MYUSERS="alpha beta gamma"
+
+for usr in $MYUSERS
+do 
+   echo "Adding user $usr."
+   useradd $usr
+   id $usr
+   echo "#####################################"
+done
+
+#4.while loop
+#!/bin/bash
+
+counter=2
+
+while true
+do
+  echo "Looping...."
+  echo "Value of counter is $counter."
+  counter=$(( $counter * 2 ))
+  sleep 1
+done
+
+echo "Out of the loop"
+
+#5.Monitoring
+#!/bin/bash
+
+echo "#####################################################"
+date 
+#ls /var/run/httpd/httpd.pid &> /dev/null
+
+if [ -f /var/run/httpd/httpd.pid ]
+then
+   echo "Httpd process is running."
+else
+   echo "Httpd process is NOT Running."
+   echo "Starting the process"
+   systemctl start httpd 
+   if [ $? -eq 0 ]
+   then
+      echo "Process started successfully."
+   else
+      echo "Process Starting Failed, contact the admin."
+   fi
+fi
+echo "#####################################################"
+echo 
+
 
